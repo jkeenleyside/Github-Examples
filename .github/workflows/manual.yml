@@ -1,0 +1,17 @@
+name: Manual Trigger with Params
+
+on:
+  workflow_dispatch:
+    inputs:
+      image_name:
+        description: 'Name of the image to deploy'
+        required: true
+        type: string
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Display image name
+        run: |
+          echo "Image to deploy: ${{ inputs.image_name }}"
