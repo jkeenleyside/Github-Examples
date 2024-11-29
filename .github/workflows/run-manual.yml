@@ -9,6 +9,8 @@ jobs:
   Run-manual:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
       - name: Run the deploy image workflow
         run: gh workflow run manual.yml -f image_name=myimage:mytag
         env:
