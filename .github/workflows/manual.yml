@@ -9,7 +9,7 @@ on:
         type: string
 
 jobs:
-  greet:
+  Deploy-image:
     runs-on: ubuntu-latest
     steps:
       - name: Display image name

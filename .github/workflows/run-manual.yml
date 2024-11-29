@@ -1,0 +1,15 @@
+name: Trigger manual workflow
+
+on: ["push"]
+
+permissions:
+    actions: write
+
+jobs:
+  Run-manual:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run the deploy image workflow
+        run: gh workflow run manual.yml -f image_name=myimage:mytag
+        env:
+            GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
